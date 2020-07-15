@@ -1,0 +1,18 @@
+version: '2'
+services:
+    db:
+      image: postgres
+      environment:
+        - POSTGRES_DB=habit-db
+        - POSTGRES_USER=root
+        - POSTGRES_PASSWORD=habit1234
+    
+    web:
+      build: .
+      command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+      volumes:
+        - .:/habit-backend
+      ports:
+        - "8000:8000"
+      depends_on:
+        - db
