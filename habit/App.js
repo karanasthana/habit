@@ -113,17 +113,17 @@
 
 // export default App;
 
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React, {Component} from 'react';
+import store from './src/store';
+import {Provider} from 'react-redux';
+import App from './src';
 
-export default function App(props) {
-  return (
-    <View style={styles.container}>
-      <Text>Hello Habit</Text>
-    </View>
-  );
+export default class AppProvider extends Component {
+    render () {
+        return (
+          <Provider store={store}>
+            <App />
+          </Provider>
+        );
+      }
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-});
