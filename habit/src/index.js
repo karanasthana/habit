@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import * as store from './store';
-import {Provider} from 'react-redux';
-import App from '../App';
+import React from 'react';
+import { StyleSheet, View, Text } from 'react-native';
 
-export default class AppProvider extends Component {
-    render () {
-        return (
-          <Provider store={store}>
-            <App />
-          </Provider>
-        );
-      }
+export default function App(props) {
+  return (
+    <View style={styles.container}>
+      <Text>Hello Habit</Text>
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+});
