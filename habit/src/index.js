@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import Login from './components/screens/login'
+import Login from './containers/login'
 
 export default function App(props) {
   return (

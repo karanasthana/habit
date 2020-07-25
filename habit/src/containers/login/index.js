@@ -1,16 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native'
-import CustomTextInput from '../../TextInput'
+import { View } from 'react-native'
+import CustomTextInput from '../../components/TextInput'
 
 export default function Login(props){
-    let input
+    let [input, setInput] = React.useState('')
     return(
         <View>
-            <Text>Hello login form</Text>
             <CustomTextInput 
                 style={{flex: 1}}
                 placeholder = 'Username'
-                ref={value => input = value}
+                value = {input}
+                onChangeText = { (value) => setInput(value) }
             />
         </View>
     )
