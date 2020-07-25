@@ -6,6 +6,7 @@ export default function CustomTextInput(props){
     return  <TextInput 
                 { ...props }
                 style={ props.style }
+                onChangeText={ props.onChangeText}
             />
 }
 
