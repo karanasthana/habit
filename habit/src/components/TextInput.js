@@ -1,13 +1,11 @@
 import React from 'react';
-import { TextInput } from 'react-native'
 import PropTypes from 'prop-types';
+import { Input } from 'native-base';
 
 export default function CustomTextInput(props){
-  return ( <TextInput 
+  return <Input 
 		{ ...props }
-		style={ props.style }
-		onChangeText={ props.onChangeText}
-	/>);
+	/>
 }
 
 // CustomTextInput.propTypes = {
