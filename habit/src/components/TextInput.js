@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input } from 'native-base';
+import { Input } from 'react-native-elements';
 
 export default function CustomTextInput(props){
   return <Input 
-		{ ...props }
-	/>
+			{ ...props }
+		/>
 }
 
 // CustomTextInput.propTypes = {
