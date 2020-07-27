@@ -1,10 +1,11 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import Login from './containers/login/login'
 
 export default function App(props) {
   return (
     <View style={styles.container}>
-      <Text>Hello Habit</Text>
+      <Login />
     </View>
   );
 }
