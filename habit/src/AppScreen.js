@@ -13,24 +13,22 @@ export default class AppScreen extends React.Component {
     };
 
     componentDidMount() {
-        // eslint-disable-next-line consistent-this
-        let self = this;
         this.checkCredentialsAndUpdate();
-        // NOTE: This is to forcefully make the SplashScreen last for 2 minutes
-        setTimeout(function() {
-            self.setState({ isTimeDone: true });
+        // NOTE: This is to forcefully make the SplashScreen last for 2 seconds
+        setTimeout(() => {
+            this.setState({ isTimeDone: true });
         }, 2000);
     }
 
     async checkCredentialsAndUpdate() {
+        // TODO Karan getGenericPassword is an async function, hence need the parent function to be async
         // const credentials = await Keychain.getGenericPassword();
         // if (!_.isEmpty(credentials.username)) {
+
         // TODO Karan use this if-else to decide where to go, Login OR Home
         if (false) {
             const pwd = JSON.parse(credentials.password);
-            global.authorization = `ApiKey ${pwd.username}:${pwd.apiKey}`;
-            global.subdomain = pwd.accountSubdomain;
-            global.baseUrl = `${PROTOCOL}${pwd.accountSubdomain}${ORGZIT_URL_APP_FLAVOUR}`;
+            global.authorization; // assign the JWT here
             global.userId = pwd.id;
             global.userResourceUri = pwd.resourceUri;
             global.username = pwd.username;

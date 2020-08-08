@@ -51,7 +51,7 @@ let HomeStack = createStackNavigator(
     },
 );
 
-export const createRootSwitchNavigator = (signedOut = false, allProjectObjects = {}) => {
+export const createRootSwitchNavigator = (signedOut = false) => {
     return createSwitchNavigator(
         {
             SignedIn: {
