@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import TextView from '../components/TextView';
-
+import { HABIT } from '../utils/string_constants';
 import style from '../styles/common';
 
 export default class SplashScreen extends React.Component {
@@ -16,7 +16,7 @@ export default class SplashScreen extends React.Component {
     render() {
         return (
             <View style={[style.page, style.splashScreen]}>
-                <TextView text={'habit'} style={styles.text} />
+                <TextView text={HABIT} style={styles.text} />
             </View>
         );
     }
