@@ -116,7 +116,6 @@
 import React, {Component} from 'react';
 import store from './src/store';
 import {Provider} from 'react-redux';
-import App from './src';
 import AppScreen from './src/AppScreen';
 import 'react-native-gesture-handler';
 

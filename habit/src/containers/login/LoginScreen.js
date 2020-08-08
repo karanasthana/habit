@@ -3,12 +3,12 @@ import { View } from 'react-native'
 import CustomTextInput from '../../components/TextInput'
 import * as CONSTANTS from '../../utils/string_constants'
 
-// import styles from '../../styles/common'
+import styles from '../../styles/common'
 
 export default function Login(props){
     let [input, setInput] = React.useState('')
     return(
-        <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+        <View style={styles.page}>
             <CustomTextInput 
                 placeholder = {CONSTANTS.USERNAME}
                 value = {input}
