@@ -8,7 +8,7 @@ import styles from '../../styles/common'
 export default function Login(props){
     let [input, setInput] = React.useState('')
     return(
-        <View style={styles.loginContainer}>
+        <View style={styles.page}>
             <CustomTextInput 
                 placeholder = {CONSTANTS.USERNAME}
                 value = {input}

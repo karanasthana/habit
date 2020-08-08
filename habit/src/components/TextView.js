@@ -13,5 +13,7 @@ export default function TextView(props) {
 }
 
 const styles = StyleSheet.create({
-  fontFamily: 'Arial',
+  fontFamily: {
+    fontFamily: 'Arial',
+  },
 });
