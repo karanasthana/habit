@@ -26,8 +26,8 @@ export default class AppScreen extends React.Component {
         // if (!_.isEmpty(credentials.username)) {
 
         // TODO Karan use this if-else to decide where to go, Login OR Home
-        if (false) {
-            const pwd = JSON.parse(credentials.password);
+        if (true) {
+            const pwd = {}; // JSON.parse(credentials.password);
             global.authorization; // assign the JWT here
             global.userId = pwd.id;
             global.userResourceUri = pwd.resourceUri;
