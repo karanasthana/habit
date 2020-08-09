@@ -1,8 +1,6 @@
 from rest_framework import serializers
 from .models import User
 
-
-
 class UserSerializer(serializers.ModelSerializer):
 
     email = serializers.EmailField()
@@ -18,7 +16,6 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
-
 
 class LoginSerializer(serializers.Serializer):
 

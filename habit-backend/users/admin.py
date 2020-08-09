@@ -30,7 +30,7 @@ class UserAdmin(BaseUserAdmin):
         ),
     )
     search_fields = ('email',)
-    ordering = ('email',)
+    ordering = ('id',)
     filter_horizontal = ()
 
 # Now register the new UserAdmin...

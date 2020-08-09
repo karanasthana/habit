@@ -25,11 +25,12 @@ class SignUpUserView(generics.GenericAPIView):
 
         email = email.lower()
         email_valid_status = ValidateEmail(email)
-        if email_valid_status == "Invalid":
+        if not email_valid_status:
             return Response({'email': ['This field is invalid.']},
                             status=status.HTTP_400_BAD_REQUEST)
 
         password = request.data.get('password')
+        
         if password is None:
             return Response({'password': ['This field is required.']},
                             status=status.HTTP_400_BAD_REQUEST)
@@ -77,7 +78,7 @@ class SignUpUserView(generics.GenericAPIView):
 
             data = {"token": jwt_encode_handler(jwt_payload_handler(user)),
                     "user_id": user.id}
-
+            
             login(request, user)
             serializer = LoginSerializer(data=data)
             serializer.is_valid()
@@ -86,4 +87,41 @@ class SignUpUserView(generics.GenericAPIView):
         else:
             return Response({'error': ['Invalid Credentials.']},
                             status=status.HTTP_401_UNAUTHORIZED)
+
+class LoginView(generics.GenericAPIView):
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request, *args, **kwargs):
+
+        email = request.data.get('email')
+
+        if email is None:
+            return Response({'email': ['This field is required.']},
+                            status=status.HTTP_400_BAD_REQUEST)
+
+        if password is None:
+            return Response({'password': ['This field is required.']},
+                            status=status.HTTP_400_BAD_REQUEST)
+
+        # Authenticate User
+        try:
+            user = User.objects.get(email=email)
+        except:
+            # user does not exist
+            return Response({'error': ['This user does not exist.']},
+                                status=status.HTTP_403_FORBIDDEN)
+
+        user = authenticate(request, email=email, password=password)
+        
+        if user is not None:
+            data = {"token": jwt_encode_handler(jwt_payload_handler(user)),
+                    "user_id": user.id}
+            login(request, user)
+            serializer = LoginSerializer(data=data)
+            serializer.is_valid()
+            return Response(serializer.data,
+                            status=status.HTTP_200_OK)
+        else:
+            return Response({'error': ['Invalid Credentials.']},
+                            status=status.HTTP_403_FORBIDDEN)
 
