@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import CustomTextInput from '../../components/TextInput'
 import * as CONSTANTS from '../../utils/string_constants'
 import {Button} from 'react-native-elements'
-import styles from '../../styles/login'
+import styles from '../../styles/common'
 
 export default function Login(){
 
@@ -15,7 +15,7 @@ export default function Login(){
     }
 
     return(
-        <View style={styles.loginContainer}>
+        <View style={styles.page}>
             <CustomTextInput 
                 placeholder = {CONSTANTS.USERNAME}
                 value = {userName}
@@ -27,7 +27,7 @@ export default function Login(){
                 secureTextEntry={true}
                 onChangeText = { value => setPassword(value) }
             />
-            {/* TODO AYUSHI create a showPassword method */}
+            {/* TODO AYUSHI- 16-08-2020 create a showPassword method */}
             <Button
                 title="Login"
                 type="clear"

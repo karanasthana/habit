@@ -21,12 +21,12 @@ export default class AppScreen extends React.Component {
     }
 
     async checkCredentialsAndUpdate() {
-        // TODO Karan getGenericPassword is an async function, hence need the parent function to be async
+        // TODO- 16-08-2020 Karan getGenericPassword is an async function, hence need the parent function to be async
         // const credentials = await Keychain.getGenericPassword();
         // if (!_.isEmpty(credentials.username)) {
 
-        // TODO Karan use this if-else to decide where to go, Login OR Home
-        if (true) {
+        // TODO- 16-08-2020 Karan use this if-else to decide where to go, Login OR Home
+        if (false) {
             const pwd = {}; // JSON.parse(credentials.password);
             global.authorization; // assign the JWT here
             global.userId = pwd.id;
