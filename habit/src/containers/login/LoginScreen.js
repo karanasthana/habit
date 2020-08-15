@@ -5,41 +5,34 @@ import * as CONSTANTS from '../../utils/string_constants'
 import {Button} from 'react-native-elements'
 import styles from '../../styles/login'
 
-export default class Login extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            firstname: '',
-            lastname: '',
-            password: ''
-        }
+export default function Login(){
+    
+    const [userName, setUserName] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    
+    handleLogin = () => {
+        //logic
     }
 
-    handleLogin(){
-        //add logic
-    }
+    return(
+        <View style={styles.loginContainer}>
+            <CustomTextInput 
+                placeholder = {CONSTANTS.USERNAME}
+                value = {userName}
+                onChangeText = { value => setUserName(value) }
+            />
+            <CustomTextInput 
+                placeholder = {CONSTANTS.PASSWORD}
+                value = {password}
+                secureTextEntry={true}
+                onChangeText = { value => setPassword(value) }
+            />
+            <Button
+                title="Login"
+                type="clear"
+                onPress= { () => this.handleLogin() }
+            />
 
-    render(){
-        return(
-            <View style={styles.loginContainer}>
-                <CustomTextInput 
-                    placeholder = {CONSTANTS.USERNAME}
-                    value = {this.state.firstname}
-                    onChangeText = { value => this.setState({firstname: value}) }
-                />
-                <CustomTextInput 
-                    placeholder = {CONSTANTS.PASSWORD}
-                    value = {this.state.password}
-                    secureTextEntry={true}
-                    onChangeText = { value => this.setState({password: value}) }
-                />
-                <Button
-                    title="Login"
-                    type="clear"
-                    onPress= { ()=> {this.handleLogin()}}
-                />
-
-            </View>
-        )
-    }
+        </View>
+    )
 }
