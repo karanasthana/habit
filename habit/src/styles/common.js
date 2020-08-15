@@ -7,7 +7,7 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
   },
 
-  // TODO- 16-08-2020 KARAN Move this to styles/splashScreen.js
+  // TODO KARAN 16-08-2020 Move this to styles/splashScreen.js
   splashScreen: {
     backgroundColor: '#178be7',
   },
