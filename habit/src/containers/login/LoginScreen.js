@@ -6,7 +6,7 @@ import {Button} from 'react-native-elements'
 import styles from '../../styles/login'
 
 export default function Login(){
-    
+
     const [userName, setUserName] = React.useState('');
     const [password, setPassword] = React.useState('');
     
@@ -27,6 +27,7 @@ export default function Login(){
                 secureTextEntry={true}
                 onChangeText = { value => setPassword(value) }
             />
+            {/* TODO AYUSHI create a showPassword method */}
             <Button
                 title="Login"
                 type="clear"
