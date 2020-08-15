@@ -1,6 +1,4 @@
-const React = require('react-native');
-
-const { StyleSheet } = React;
+import {StyleSheet} from 'react-native'
 
 module.exports = StyleSheet.create({
     page: {
@@ -8,11 +6,8 @@ module.exports = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    // TODO KARAN Move this to styles/login.js
-    loginContainer: {
-        width: '100%',
-    },
-    // TODO KARAN Move this to styles/splashScreen.js
+    
+    // TODO- 16-08-2020 KARAN Move this to styles/splashScreen.js
     splashScreen: {
         backgroundColor: '#178be7',
     }
