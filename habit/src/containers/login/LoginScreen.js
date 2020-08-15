@@ -1,13 +1,14 @@
 import React from 'react';
-import { View } from 'react-native'
+import { View, Text} from 'react-native'
 import CustomTextInput from '../../components/TextInput'
 import * as CONSTANTS from '../../utils/string_constants'
 import {Button} from 'react-native-elements'
-import styles from '../../styles/common'
+import commonStyles from '../../styles/common'
+import styles from '../../styles/login'
 
 export default function Login(){
 
-    const [userName, setUserName] = React.useState('');
+    const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     
     handleLogin = () => {
@@ -15,11 +16,13 @@ export default function Login(){
     }
 
     return(
-        <View style={styles.page}>
+        <View style={commonStyles.page}>
+            {/* TODO AYUSHI- 16-08-2020 add an image here and a pretty background */}
+            <Text style={styles.headline}>Log in to start tracking your habits</Text>
             <CustomTextInput 
-                placeholder = {CONSTANTS.USERNAME}
-                value = {userName}
-                onChangeText = { value => setUserName(value) }
+                placeholder = {CONSTANTS.EMAIL}
+                value = {email}
+                onChangeText = { value => setEmail(value) }
             />
             <CustomTextInput 
                 placeholder = {CONSTANTS.PASSWORD}
@@ -30,7 +33,7 @@ export default function Login(){
             {/* TODO AYUSHI- 16-08-2020 create a showPassword method */}
             <Button
                 title="Login"
-                type="clear"
+                type="outline"
                 onPress= { () => this.handleLogin() }
             />
 
