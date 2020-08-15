@@ -116,13 +116,14 @@
 import React, {Component} from 'react';
 import store from './src/store';
 import {Provider} from 'react-redux';
-import App from './src';
+import AppScreen from './src/AppScreen';
+import 'react-native-gesture-handler';
 
 export default class AppProvider extends Component {
     render () {
         return (
           <Provider store={store}>
-            <App />
+            <AppScreen />
           </Provider>
         );
       }
