@@ -15,15 +15,20 @@ export default function Signup(props){
     const [lastname, setLastname] = React.useState('');
 
     const handleSignup = () => {
-        //logic
-        console.log("email", email)
+        let reqBody = {
+            firstname,
+            lastname,
+            email,
+            gender,
+            password
+        }
     }
 
     return(
         <View style={commonStyles.page}>
             {/* TODO AYUSHI- 16-08-2020 add an image here and a pretty background */}
             <Header onPress={() => props.navigation.goBack()}/>
-            <Text>Sign up</Text>
+            <Text>{CONSTANTS.SIGNUP}</Text>
             <CustomTextInput 
                 placeholder = {CONSTANTS.FIRSTNAME}
                 value = {firstname}
@@ -43,7 +48,7 @@ export default function Signup(props){
                 placeholder = {CONSTANTS.GENDER}
                 value = {gender}
                 onChangeText = { value => setGender(value) }
-            />
+            /> {/* TODO AYUSHI- 16-08-2020 make this a dropdown */}
             <CustomTextInput 
                 placeholder = {CONSTANTS.PASSWORD}
                 value = {password}
@@ -52,7 +57,7 @@ export default function Signup(props){
             />
             {/* TODO AYUSHI- 16-08-2020 create a showPassword and add a confirm password field */}
             <Button
-                title="Signup"
+                title= {CONSTANTS.SIGNUP}
                 type="outline"
                 onPress= { () => handleSignup() }
             />

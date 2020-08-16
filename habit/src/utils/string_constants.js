@@ -5,3 +5,5 @@ export const GENDER = 'Gender';
 export const EMAIL = 'Email';
 export const PASSWORD = 'Password';
 export const HOME = 'Home';
+export const SIGNUP = 'Signup';
+export const SIGNUP_TEXT = `Don't have an account? Sign up`

@@ -31,7 +31,7 @@ export default function Login(props){
                 onChangeText = { value => setPassword(value) }
             />
             <TouchableOpacity onPress={() => props.navigation.navigate('Signup')} style={styles.signupText}> 
-                <Text>Don't have an account? Sign up</Text>
+                <Text>{CONSTANTS.SIGNUP_TEXT}</Text>
             </TouchableOpacity>
             {/* TODO AYUSHI- 16-08-2020 create a showPassword method */}
             <Button
