@@ -6,7 +6,7 @@ export const login = (data) => {
 	return (dispatch) => {
 		return fetch('/login', {
 			method: 'POST',
-			headers: {  //TODO AYUSHI change them accordinge to the API
+			headers: {  //TODO AYUSHI change them according to the API
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
 			},

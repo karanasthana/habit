@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text} from 'react-native'
+import { View, Text, TouchableOpacity} from 'react-native'
 import CustomTextInput from '../../components/TextInput'
 import * as CONSTANTS from '../../utils/string_constants'
 import {Button} from 'react-native-elements'
 import commonStyles from '../../styles/common'
 import styles from '../../styles/login'
 
-export default function Login(){
+export default function Login(props){
 
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -30,6 +30,9 @@ export default function Login(){
                 secureTextEntry={true}
                 onChangeText = { value => setPassword(value) }
             />
+            <TouchableOpacity onPress={() => props.navigation.navigate('Signup')} style={styles.signupText}> 
+                <Text>Don't have an account? Sign up</Text>
+            </TouchableOpacity>
             {/* TODO AYUSHI- 16-08-2020 create a showPassword method */}
             <Button
                 title="Login"

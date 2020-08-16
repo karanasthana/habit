@@ -1,4 +1,5 @@
 import Login from './containers/login/LoginScreen';
+import Signup from './containers/signup/SignupScreen'
 import Home from './containers/HomeScreen';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createSwitchNavigator } from 'react-navigation';
@@ -7,6 +8,9 @@ let LoginStack = createStackNavigator(
     {
         Login: {
             screen: Login,
+        },
+        Signup: {
+            screen: Signup,
         },
         // ForgotPassword: {
         //     screen: ForgotPassword,
