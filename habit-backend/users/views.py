@@ -94,7 +94,8 @@ class LoginView(generics.GenericAPIView):
     def post(self, request, *args, **kwargs):
 
         email = request.data.get('email')
-
+        password = request.data.get('password')
+        
         if email is None:
             return Response({'email': ['This field is required.']},
                             status=status.HTTP_400_BAD_REQUEST)
