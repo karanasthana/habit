@@ -1,2 +1,5 @@
 Django>=2.0,<3.0
-psycopg2-binary>=2.8
+psycopg2-binary==2.8
+djangorestframework==3.10.2
+djangorestframework-jwt==1.11.0
+django-cors-headers==3.4.0
