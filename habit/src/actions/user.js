@@ -1,3 +1,5 @@
+import * as CONSTANT from '../constants/user';
+
 export const login = data => {
 	return dispatch => {
 		return fetch('/api/login', {
@@ -9,7 +11,7 @@ export const login = data => {
 			body: JSON.stringify(data),
 		})
 		.then( response => dispatch({
-			type: 'LOGIN',
+			type: CONSTANT.LOGIN,
 			payload: response.data
 		}))
 	}
@@ -26,7 +28,7 @@ export const signup = data => {
 			body: JSON.stringify(data),
 		})
 		.then( response => dispatch({
-			type: 'SIGNUP',
+			type: CONSTANT.SIGNUP,
 			payload: response.data
 		}))
 	}
