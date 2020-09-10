@@ -35,7 +35,6 @@ export default createBottomTabNavigator(
         const { routeName } = navigation.state;
         let IconComponent = Ionicons;
         let iconName;
-        debugger;
         if (routeName === 'Home') {
           iconName = focused
             ? 'ios-information-circle'
