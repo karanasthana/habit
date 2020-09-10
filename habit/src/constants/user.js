@@ -1,1 +1,2 @@
-export const AUTH_EMAIL = 'USER:AUTH_EMAIL';
+export const SIGNUP = 'signup';
+export const LOGIN = 'login';
