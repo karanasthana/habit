@@ -15,14 +15,14 @@ const Signup = (props) => {
 	const [lastname, setLastname] = React.useState('');
 
 	const handleSignup = () => {
-			let reqBody = {
-					firstname,
-					lastname,
-					email,
-					gender,
-					password
-			}
-			props.screenProps.userActions.signup(reqBody).then(res => console.log(res)) 
+		let reqBody = {
+				first_name: firstname,
+				last_name: lastname,
+				email,
+				gender,
+				password
+		}
+		props.screenProps.userActions.signup(reqBody).then(res => console.log(res)) 
 	}
 
     return(
