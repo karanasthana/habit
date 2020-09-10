@@ -6,4 +6,5 @@ export const EMAIL = 'Email';
 export const PASSWORD = 'Password';
 export const HOME = 'Home';
 export const SIGNUP = 'Signup';
-export const SIGNUP_TEXT = `Don't have an account? Sign up`
+export const SIGNUP_TEXT = "Don't have an account? Sign up";
+export const LOGIN_MSG = 'Log in to start tracking your habits';
