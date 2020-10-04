@@ -1,6 +1,6 @@
 import Login from './containers/login/LoginScreen';
 import Signup from './containers/signup/SignupScreen';
-import Home from './containers/HomeScreen';
+import Home from './containers/BottomNav';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createSwitchNavigator } from 'react-navigation';
 

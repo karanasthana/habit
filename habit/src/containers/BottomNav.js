@@ -2,13 +2,14 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import HomeScreen from './home/HomeScreen'
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
-class HomeScreen extends React.Component {
+class BottomNav extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home!</Text>
+        <HomeScreen />
       </View>
     );
   }
@@ -26,7 +27,7 @@ class SettingsScreen extends React.Component {
 
 export default createBottomTabNavigator(
   {
-    Home: HomeScreen,
+    Home: BottomNav,
     Settings: SettingsScreen,
   },
   {
@@ -37,8 +38,8 @@ export default createBottomTabNavigator(
         let iconName;
         if (routeName === 'Home') {
           iconName = focused
-            ? 'ios-information-circle'
-            : 'ios-information-circle-outline';
+            ? 'home-outline'
+            : 'home-outline';
           // Sometimes we want to add badges to some icons.
           // You can check the implementation below.
           // IconComponent = HomeIconWithBadge;
